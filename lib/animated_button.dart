@@ -1,10 +1,12 @@
-
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/result_page.dart';
 
 const kBottomContainerColor = Color(0xFF252526);
 const kBottomContainerHeight = 80.0;
 
 class MyHomePage extends StatefulWidget {
+  final Function? onPressed;
+  MyHomePage({this.onPressed});
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -43,12 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
       containerColor = Colors.red;
     });
 
-    Future.delayed(Duration(milliseconds: 5000), () {
+    Future.delayed(Duration(milliseconds: 500), () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ResultPage()),
+      );
       setState(() {
         containerColor = kBottomContainerColor;
       });
     });
   }
 }
-
-
