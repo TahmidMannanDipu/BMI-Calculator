@@ -28,6 +28,3 @@ class IconContent extends StatelessWidget {
         )],
     );
   }}
-class Dipu{
-
-}
